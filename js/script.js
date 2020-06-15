@@ -13,7 +13,7 @@ project 1 - A Random Quote Generator
 //Array of objects, all of which contain quotes, a source, and a tag, and some have citations and years if that is known.
 let quotes = [
     {
-    quote : `You never know what worse luck your bad luck saved you from.`,
+    quote : "You never know what worse luck your bad luck saved you from.",
     source : `Cormac Mccarthy`,
     citation : `No Country for Old Men`,
     year : 2005,
@@ -29,11 +29,11 @@ let quotes = [
     {
     quote : "Meaure what is important, don’t make important what you can measure.",
     source : "Robert McNamara",
-    tag : "insightful",
+    tag : "insightful"
     },
     {
     quote : "A day without sunshine is like, you know, night.",
-     source : "Steve Martin",
+    source : "Steve Martin",
     tag : "humor"
     },
     {
@@ -45,7 +45,7 @@ let quotes = [
     },
     {
     quote : "Women don’t like me because I sleep standing up, like a horse.",
-     source : "Eric Andre",
+    source : "Eric Andre",
     tag : "humor"
     },
     {
@@ -89,14 +89,14 @@ function printQuote() {
     let show = `<p class = "quote"> ${speak.quote} </p> <p class="source"> ${speak.source}`;
     //the next 3 conditionals check for existence of the property in the object. no else statement needed for any of them.
     if (speak.citation !== undefined){
-        show += `, ${speak.citation} `
+        show += `<span class="citation">${speak.citation}</span>`
     }
     if (speak.year !== undefined) {
-        show += ` - ${speak.year}`;
+        show += `<span class="year">${speak.year}</span>`;
         }
     //added a line break html tag to make it look nice ->"<br>" which need not closing tag.
     if (speak.tag !== undefined) {
-        show += `<br> (${speak.tag})`;
+        show += `<br> <span class="tag">${speak.tag}</span>`;
     }
     show += `</p>`
     //below we inject our string into the html, and also change the background to a random color with each invoke of printQuote.
